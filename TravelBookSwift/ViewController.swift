@@ -93,7 +93,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             // Add New Data
             
         }
+        let keyboardGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(keyboardGestureRecognizer)
         
+        
+    }
+    @objc func hideKeyboard(){
+        view.endEditing(true)
     }
     
     @objc func chooseLocation(gestureRecognizer: UILongPressGestureRecognizer){
